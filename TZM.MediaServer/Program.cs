@@ -11,7 +11,6 @@ namespace TZM.MediaServer {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             VideoOS.Platform.SDK.Environment.Initialize();
-            VideoOS.Platform.SDK.UI.Environment.Initialize();
             VideoOS.Platform.SDK.Export.Environment.Initialize();
             var success = false;
             Application.Run(new DialogLoginForm(result => success = result));

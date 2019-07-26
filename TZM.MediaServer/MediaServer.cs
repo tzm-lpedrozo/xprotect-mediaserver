@@ -13,26 +13,30 @@ namespace TZM.MediaServer {
 
         public MediaServer() {
             InitializeComponent();
-            var configs = Configuration.Instance.GetItems();
-            foreach (var config in configs) {
-                foreach (var cameraGroup in config.GetChildren()) {
-                    foreach (var defaultCameraGroup in cameraGroup.GetChildren()) {
-                        foreach (var camera in defaultCameraGroup.GetChildren()) {
-                            if (camera.FQID.Kind == Kind.Camera) {
-                                Cameras[camera.FQID.ObjectId] = camera;
-                                var status = 0;
-                                var jpegSource = new JPEGVideoSource(camera);
-                                try {
-                                    jpegSource.Init();
-                                    var jpegData = jpegSource.GetAtOrBefore(new DateTime()) as JPEGData;
-                                    File.WriteAllBytes($"C:/Snapshots/{camera.Name}.jpg", jpegData.Bytes);
-                                } catch (Exception e) {
-                                    Console.WriteLine(e.Message);
-                                    status = 1;
-                                }
-                                LstCameras.Items.Add(camera.Name, status);
-                            }
-                        }
+            var items = Configuration.Instance.GetItemsByKind(Kind.Camera);
+            foreach (var item in items) {
+                LoadItems(item);
+            }
+        }
+
+        private void LoadItems(Item item) {
+            foreach (var child in item.GetChildren()) {
+                if (child.FQID.Kind == Kind.Camera && child.HasChildren == VideoOS.Platform.HasChildren.No) {
+                    Cameras[child.FQID.ObjectId] = child;
+                    var status = 0;
+                    var jpegSource = new JPEGVideoSource(child);
+                    try {
+                        jpegSource.Init();
+                        var jpegData = jpegSource.GetAtOrBefore(new DateTime()) as JPEGData;
+                        File.WriteAllBytes($"C:/Snapshots/{child.Name}.jpg", jpegData.Bytes);
+                    } catch (Exception e) {
+                        Console.WriteLine(e.Message);
+                        status = 1;
+                    }
+                    LstCameras.Items.Add(child.Name, status);
+                } else {
+                    if (child.HasChildren != VideoOS.Platform.HasChildren.No) {
+                        LoadItems(child);
                     }
                 }
             }
