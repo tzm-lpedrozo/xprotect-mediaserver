@@ -13,11 +13,11 @@ namespace TZM.MediaServer {
             VideoOS.Platform.SDK.Environment.Initialize();
             VideoOS.Platform.SDK.UI.Environment.Initialize();
             VideoOS.Platform.SDK.Export.Environment.Initialize();
-            Application.Run(new DialogLoginForm((result) => {
-                if (result) {
-                    Application.Run(new MediaServer());
-                }
-            }));
+            var success = false;
+            Application.Run(new DialogLoginForm(result => success = result));
+            if (success) {
+                Application.Run(new MediaServer());
+            }
         }
 
     }
