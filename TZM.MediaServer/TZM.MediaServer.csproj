@@ -84,7 +84,8 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="VideoOS.Platform">
+    <Reference Include="VideoOS.Platform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bc60fba4a7969f89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Program Files\Milestone\MIPSDK\Bin\VideoOS.Platform.dll</HintPath>
     </Reference>
     <Reference Include="VideoOS.Platform.SDK">
@@ -95,6 +96,10 @@
     </Reference>
     <Reference Include="VideoOS.Platform.SDK.UI">
       <HintPath>..\..\..\Program Files\Milestone\MIPSDK\Bin\VideoOS.Platform.SDK.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="VideoOS.Toolkit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bc60fba4a7969f89, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Milestone\MIPSDK\Bin\VideoOS.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
@@ -131,6 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="screen.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
