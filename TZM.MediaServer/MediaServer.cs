@@ -12,7 +12,6 @@ namespace TZM.MediaServer {
         private Dictionary<Guid, Item> Cameras = new Dictionary<Guid, Item>();
 
         public MediaServer() {
-            var count = 0;
             InitializeComponent();
             var configs = Configuration.Instance.GetItems();
             foreach (var config in configs) {
@@ -32,7 +31,6 @@ namespace TZM.MediaServer {
                                     status = 1;
                                 }
                                 LstCameras.Items.Add(camera.Name, status);
-                                ++count;
                             }
                         }
                     }

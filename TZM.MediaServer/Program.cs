@@ -18,7 +18,6 @@ namespace TZM.MediaServer {
                     Application.Run(new MediaServer());
                 }
             }));
-            
         }
 
     }
