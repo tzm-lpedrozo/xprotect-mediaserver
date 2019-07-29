@@ -26,7 +26,7 @@ namespace TZM.MediaServer {
                     var status = 0;
                     var jpegSource = new JPEGVideoSource(child);
                     try {
-                        jpegSource.Init(640, 480);
+                        jpegSource.Init();
                         var jpegData = jpegSource.GetNearest(new DateTime()) as JPEGData;
                         File.WriteAllBytes($"C:/Snapshots/{child.Name}.jpg", jpegData.Bytes);
                     } catch (Exception e) {
