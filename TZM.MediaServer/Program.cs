@@ -10,7 +10,9 @@ namespace TZM.MediaServer {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Console.WriteLine(Environment.CurrentDirectory);
             VideoOS.Platform.SDK.Environment.Initialize();
+            VideoOS.Platform.SDK.Media.Environment.Initialize();
             VideoOS.Platform.SDK.Export.Environment.Initialize();
             var success = false;
             Application.Run(new DialogLoginForm(result => success = result));
