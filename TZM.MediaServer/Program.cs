@@ -13,7 +13,7 @@ namespace TZM.MediaServer {
             VideoOS.Platform.SDK.Environment.Initialize();
             VideoOS.Platform.SDK.Media.Environment.Initialize();
             VideoOS.Platform.SDK.Export.Environment.Initialize();
-            var context = MultiEnvironment.CreateSingleServerUserContext("TZM\\lpedrozo", "apnk34cTgo", true, new Uri("http://192.168.1.240"));
+            var context = MultiEnvironment.CreateSingleServerUserContext("TZM\\lpedrozo", "********", true, new Uri("http://192.168.1.240"));
             if (MultiEnvironment.LoginUserContext(context, true, true)) {
                 Application.Run(new MediaServer());
             }
