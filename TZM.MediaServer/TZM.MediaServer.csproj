@@ -84,9 +84,19 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="VideoOS.ConfigurationAPI">
+      <HintPath>..\..\..\Program Files\Milestone\MIPSDK\Bin\VideoOS.ConfigurationAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="VideoOS.Management.Common">
+      <HintPath>..\..\..\Program Files\Milestone\MIPSDK\Bin\VideoOS.Management.Common.dll</HintPath>
+    </Reference>
     <Reference Include="VideoOS.Platform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bc60fba4a7969f89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Program Files\Milestone\MIPSDK\Bin\VideoOS.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="VideoOS.Platform.Primitives, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bc60fba4a7969f89, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Milestone\MIPSDK\Bin\VideoOS.Platform.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="VideoOS.Platform.SDK">
       <HintPath>..\..\..\Program Files\Milestone\MIPSDK\Bin\VideoOS.Platform.SDK.dll</HintPath>
@@ -97,8 +107,12 @@
     <Reference Include="VideoOS.Platform.SDK.Media">
       <HintPath>..\..\..\Program Files\Milestone\MIPSDK\Bin\VideoOS.Platform.SDK.Media.dll</HintPath>
     </Reference>
-    <Reference Include="VideoOS.Platform.SDK.UI">
-      <HintPath>..\..\..\Program Files\Milestone\MIPSDK\Bin\VideoOS.Platform.SDK.UI.dll</HintPath>
+    <Reference Include="VideoOS.Toolkit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bc60fba4a7969f89, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Milestone\MIPSDK\Bin\VideoOS.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="VideoOS.Utilities">
+      <HintPath>..\..\..\Program Files\Milestone\MIPSDK\Bin\VideoOS.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
