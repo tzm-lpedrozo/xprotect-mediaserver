@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using VideoOS.Platform.SDK;
+using VideoOS.Platform.SDK.UI.LoginDialog;
 
 namespace TZM.MediaServer {
 
@@ -13,8 +14,9 @@ namespace TZM.MediaServer {
             VideoOS.Platform.SDK.Environment.Initialize();
             VideoOS.Platform.SDK.Media.Environment.Initialize();
             VideoOS.Platform.SDK.Export.Environment.Initialize();
-            var context = MultiEnvironment.CreateSingleServerUserContext("TZM\\lpedrozo", "apnk34cTgo", true, new Uri("http://192.168.1.240"));
-            if (MultiEnvironment.LoginUserContext(context, true, true)) {
+            var success = false;
+            Application.Run(new DialogLoginForm(result => success = result));
+            if (success) {
                 Application.Run(new MediaServer());
             }
         }
